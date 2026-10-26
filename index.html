@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rhinox</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: #121a2d;
+        --card-alt: #1a2742;
+        --text: #ebf1ff;
+        --muted: #b9c7e6;
+        --accent: #70e0a1;
+        --accent-2: #5cc8ff;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, var(--bg), #111827 50%, #0d1324);
+        color: var(--text);
+      }
+
+      .container {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 24px 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .brand span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        color: var(--muted);
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+        padding: 56px 0 40px;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 1.05;
+        margin: 0 0 18px;
+      }
+
+      .accent {
+        color: var(--accent);
+      }
+
+      p {
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 24px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #07111a;
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .hero-card {
+        background: rgba(18, 26, 45, 0.9);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 22px;
+        padding: 22px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      }
+
+      .mini-panel {
+        background: linear-gradient(180deg, var(--card), var(--card-alt));
+        border-radius: 18px;
+        padding: 18px;
+        margin-bottom: 16px;
+      }
+
+      .panel-label {
+        color: var(--accent-2);
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .stat {
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        padding: 20px 0 60px;
+      }
+
+      .feature {
+        background: rgba(18, 26, 45, 0.85);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 24px;
+      }
+
+      .feature h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+
+      footer {
+        padding: 20px 0 40px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 760px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding-top: 30px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="brand">Rhi<span>nox</span></div>
+          <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <h1>Build a smarter <span class="accent">future</span>.</h1>
+          <p>
+            Rhinox helps teams move faster with technology that feels clear, capable,
+            and built for real growth. From strategy to execution, we turn ideas into
+            results.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Get Started</a>
+            <a class="btn btn-secondary" href="#features">Learn More</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="mini-panel">
+            <div class="panel-label">Performance</div>
+            <p class="stat">3.2x</p>
+          </div>
+
+          <div class="mini-panel">
+            <div class="panel-label">Projects launched</div>
+            <p class="stat">120+</p>
+          </div>
+
+          <div class="mini-panel">
+            <div class="panel-label">Client satisfaction</div>
+            <p class="stat">98%</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="grid">
+        <article class="feature">
+          <h3>Strategy</h3>
+          <p>We align digital vision with business goals to build a clear roadmap.</p>
+        </article>
+        <article class="feature">
+          <h3>Design</h3>
+          <p>We craft thoughtful interfaces that are intuitive, responsive, and memorable.</p>
+        </article>
+        <article class="feature">
+          <h3>Delivery</h3>
+          <p>We implement polished experiences quickly, with quality from start to finish.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="container">© 2026 Rhinox — Built for what’s next.</div>
+    </footer>
+  </body>
+</html>
